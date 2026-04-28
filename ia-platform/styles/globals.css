@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  color: #1A1A1A;
+  background: #FBF7F0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
+
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-bold text-base cursor-pointer border-none transition-all duration-300 no-underline;
+    background: #C5973B; color: #0A1628;
+  }
+  .btn-gold:hover { background: #E8C36A; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(197,151,59,.4); }
+
+  .btn-teal {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-bold text-base cursor-pointer border-none transition-all duration-300 no-underline text-white;
+    background: #0E7C6B;
+  }
+  .btn-teal:hover { background: #14A890; transform: translateY(-2px); }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-bold text-base cursor-pointer transition-all duration-300 no-underline text-white;
+    background: transparent; border: 2px solid rgba(255,255,255,.4);
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+
+  .form-field {
+    @apply w-full px-4 py-3 rounded-lg text-base transition-colors duration-300 bg-white;
+    border: 2px solid #e0dcd4; font-family: 'Source Sans 3', sans-serif;
+  }
+  .form-field:focus { outline: none; border-color: #2A5F8F; }
+
+  .card {
+    @apply bg-white rounded-2xl p-9 transition-all duration-300;
+    box-shadow: 0 2px 8px rgba(10,22,40,.08); border: 1px solid rgba(0,0,0,.04);
+  }
+  .card:hover { box-shadow: 0 4px 20px rgba(10,22,40,.12); transform: translateY(-4px); }
+
+  .section-label {
+    @apply inline-block text-xs font-bold tracking-widest uppercase mb-3;
+    color: #C5973B;
+  }
+}
