@@ -35,8 +35,12 @@ export default function HomePage() {
               From Lagos to Lima, Damascus to Dhaka — you carried your family and your culture across borders most people will never cross. Immigrants Alliance exists so you never face what comes next alone.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <Link href="/register-organization" className="btn-gold">Join the Alliance →</Link>
+              <Link href="/register-organization" className="btn-gold">Register Your Organization →</Link>
               <Link href="/parade-registration" className="btn-outline">🎉 Register for the Parade</Link>
+            </div>
+            <div className="mt-6 bg-white/[.06] border border-white/10 rounded-xl px-5 py-3 inline-block">
+              <p className="text-gold-light text-sm font-bold">First 1,000,000 Founding Members Join Free for Life</p>
+              <p className="text-white/60 text-xs mt-1">Individual members — <Link href="/register" className="text-gold underline">join now</Link></p>
             </div>
           </div>
         </div>
@@ -187,7 +191,7 @@ export default function HomePage() {
           </h2>
           <p className="text-white/50 mb-8 max-w-md mx-auto text-sm">190+ countries. Every language, every faith, every background.</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/register-organization" className="btn-gold text-base px-8 py-3.5">Join the Alliance →</Link>
+            <Link href="/register-organization" className="btn-gold text-base px-8 py-3.5">Register Your Organization →</Link>
             <Link href="/parade-registration" className="btn-outline text-base px-8 py-3.5">Register for the Parade →</Link>
           </div>
         </div>

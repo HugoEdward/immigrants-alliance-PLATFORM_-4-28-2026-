@@ -169,15 +169,14 @@ export default function CelebrationPage() {
       <section className="bg-navy py-14 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-gold-light mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>Get Involved</h2>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/register-organization" className="btn-gold text-sm">Register Organization →</Link>
-            <Link href="/join-seed" className="btn-teal text-sm">Economic Empowerment →</Link>
+          <div className="flex flex-wrap gap-3 justify-center mb-6">
+            <a href="https://culturescelebration.com" target="_blank" rel="noopener noreferrer" className="bg-gold text-navy px-8 py-3.5 rounded-lg font-bold text-sm no-underline hover:bg-gold-light transition-all">Visit the Official Celebration Site ↗</a>
+            <Link href="/register-organization" className="btn-outline text-sm">Register Organization →</Link>
             <Link href="/parade-registration" className="btn-outline text-sm">Register for 2026 Parade →</Link>
-            <Link href="/register-merchant" className="btn-outline text-sm">Join as Merchant →</Link>
-            <Link href="/register-ambassador" className="btn-outline text-sm">Become Ambassador →</Link>
-            <Link href="/contact" className="btn-outline text-sm">Sponsorship Inquiry →</Link>
+            <Link href="/join-seed" className="btn-outline text-sm">Economic Empowerment →</Link>
           </div>
-          <p className="text-white/30 text-xs mt-6">Economic infrastructure powered by Mundus.Center · Passport to the World powered by MundusPASS</p>
+          <p className="text-white/50 text-sm text-center max-w-xl mx-auto">Full Celebration participation details — including National Participation, Passport to the World pavilions, Conference at the United Nations, and Star of Harmony Awards — are available at <a href="https://culturescelebration.com" target="_blank" rel="noopener noreferrer" className="text-gold underline">CulturesCelebration.com</a>.</p>
+          <p className="text-white/30 text-xs mt-4 text-center">Economic infrastructure powered by Mundus.Center · Passport to the World powered by MundusPASS</p>
         </div>
       </section>
     </>

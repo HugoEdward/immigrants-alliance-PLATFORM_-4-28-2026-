@@ -54,7 +54,7 @@ export default function AboutPage() {
             <div className="card"><h3 className="text-xl font-bold text-navy mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>International Cultures Mission</h3><p className="text-sm text-gray-500">Promoting positive intercultural relations. Sponsor of the annual International Cultures Celebration since 1986.</p></div>
           </div>
 
-          <div className="mt-16 text-center"><Link href="/register" className="btn-gold">Join the Alliance →</Link></div>
+          <div className="mt-16 text-center"><Link href="/register" className="btn-gold">Register Your Organization →</Link></div>
         </div>
       </section>
     </>
