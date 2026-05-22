@@ -29,12 +29,26 @@ export default function ParadeRegistration() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault(); setLoading(true); setError('');
     const f = new FormData(e.currentTarget);
+    const participationDetails = [
+      `Organization / group type: ${f.get('organization_type') || 'Not provided'}`,
+      `Nationality / culture represented: ${f.get('nationality_represented') || f.get('country_represented') || 'Not provided'}`,
+      `City / region represented: ${f.get('city_region_represented') || 'Not provided'}`,
+      `National contingent participation: ${f.get('national_contingent') || 'Not provided'}`,
+      `Soccer/fútbol or sports team: ${f.get('soccer_team') || 'Not provided'}`,
+      `Youth / children participation: ${f.get('youth_participation') || 'Not provided'}`,
+      `Flags / banners / costumes / music: ${f.get('presentation_elements') || 'Not provided'}`,
+      `Consulate, UN Mission, or community affiliation: ${f.get('consulate_affiliation') || 'Not provided'}`,
+      `Grant interest: ${f.get('grant_interest') || 'Not provided'}`,
+      '',
+      `Cultural showcase description: ${f.get('showcase_description') || 'Not provided'}`,
+    ].join('\n');
+
     const { error: dbErr } = await supabase.from('parade_registrations').insert([{
       org_name: f.get('org_name'), country_represented: f.get('country_represented'),
       country_operation: f.get('country_operation'), contact_name: f.get('contact_name'),
       contact_title: f.get('contact_title'), contact_email: f.get('contact_email'),
       phone: f.get('phone'), membership_status: f.get('membership_status'),
-      showcase_description: f.get('showcase_description'),
+      showcase_description: participationDetails,
       participants_count: f.get('participants_count') ? parseInt(f.get('participants_count') as string) : 0,
       parade_year: 2026,
     }]);
@@ -81,10 +95,26 @@ export default function ParadeRegistration() {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-navy mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>Who Should Participate</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {['Consulates & UN Missions', 'Cultural Attachés', 'Socio-Cultural Organizations', 'National Contingents', 'Soccer & Sports Teams', 'Youth Cultural Groups', 'Faith-Based Organizations', 'Community Organizations'].map(item => (
+            {[
+              'Consuls General & UN Missions',
+              'Cultural / Business / Tourism Attachés',
+              'Socio-Cultural Organizations',
+              'National Contingents',
+              'Soccer / Fútbol Clubs',
+              'Children & Youth Teams',
+              'Social Clubs & Cultural Schools',
+              'Folklore / Dance / Music Groups',
+              'Chambers & Professional Associations',
+              'Ethnic Media & Civic Leaders',
+              'Faith-Based Community Organizations',
+              'Diaspora & Immigrant Organizations',
+            ].map(item => (
               <div key={item} className="bg-warm rounded-xl p-4 text-center"><p className="text-sm text-navy font-medium">{item}</p></div>
             ))}
           </div>
+          <p className="mt-6 text-sm text-gray-600 leading-relaxed">
+            If your organization represents a nation, city, region, culture, diaspora community, social club, or soccer/fútbol team in the New York Tri-State area, this registration helps us group your participation under the correct national contingent and coordinate with consulates, UN Missions, cultural leaders, and community organizers.
+          </p>
         </div>
       </section>
 
@@ -123,30 +153,83 @@ export default function ParadeRegistration() {
       <section className="bg-warm py-16">
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-white rounded-2xl p-8 md:p-12" style={{ boxShadow: '0 4px 20px rgba(10,22,40,.12)' }}>
-            <h2 className="text-2xl font-bold text-navy text-center mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Register for the 41st International Cultures–Immigrants Parade</h2>
-            <p className="text-center text-gray-500 mb-8 text-sm">Organization registration · Deadline: May 30, 2026</p>
+            <h2 className="text-xl font-bold text-navy text-center mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>Parade Participation Agreement</h2>
+            <p className="text-center text-xs text-gray-400 mb-1">41st International Cultures–Immigrants Parade · Saturday, June 13, 2026</p>
+            <p className="text-center text-xs text-gray-400 mb-6">Avenue of the Americas from 42nd to 57th St, NYC · Produced by Immigrants Alliance</p>
             {error && <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4 mb-6 text-sm">{error}</div>}
             <form onSubmit={handleSubmit}>
-              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Organization Name *</label><input name="org_name" required className="form-field" /></div>
+              {/* Coordinating Organization */}
+              <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-2 mb-4 border-b border-gray-100 pb-2">Coordinating Organization</h3>
               <div className="grid md:grid-cols-2 gap-4 mb-5">
-                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Country Represented *</label><select name="country_represented" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
-                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Country of Operation *</label><select name="country_operation" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Representative Name *</label><input name="contact_name" required className="form-field" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Organization Name *</label><input name="org_name" required className="form-field" /></div>
               </div>
-              <div className="grid md:grid-cols-2 gap-4 mb-5">
-                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Contact Person *</label><input name="contact_name" required className="form-field" /></div>
-                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Title *</label><input name="contact_title" required className="form-field" /></div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4 mb-5">
+              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Organization Address *</label><input name="org_address" required className="form-field" /></div>
+              <div className="grid md:grid-cols-3 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">President&rsquo;s Cell *</label><input name="phone" type="tel" required className="form-field" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Other Tel.</label><input name="other_tel" type="tel" className="form-field" /></div>
                 <div><label className="block font-semibold text-sm mb-1.5 text-navy">Email *</label><input name="contact_email" type="email" required className="form-field" /></div>
-                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Phone *</label><input name="phone" type="tel" required className="form-field" /></div>
               </div>
+
+              {/* Membership status */}
               <div className="mb-5">
                 <label className="block font-semibold text-sm mb-1.5 text-navy">Membership Status *</label>
-                <select name="membership_status" required className="form-field"><option value="">Select...</option><option value="active">Active Member (1+ year)</option><option value="applying">I&apos;d like to apply for membership</option><option value="non-member">Non-member ($5,000 fee)</option></select>
-                <p className="text-xs text-gray-500 mt-1">Members participate FREE. <Link href="/register" className="text-teal underline">Apply for membership</Link> for free participation.</p>
+                <select name="membership_status" required className="form-field"><option value="">Select...</option><option value="member">Member Organization of Immigrants Alliance (FREE)</option><option value="applying">Applying for membership (FREE if approved)</option><option value="non-member">Non-Member Organization ($5,000 contribution)</option></select>
+                <p className="text-xs text-gray-500 mt-1">Member Organizations in good standing participate FREE. <Link href="/register-organization" className="text-teal underline">Apply for membership</Link> if not yet a member.</p>
               </div>
-              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Describe Your Cultural Showcase</label><textarea name="showcase_description" rows={4} placeholder="Dance, music, floats, bands, traditional dress..." className="form-field" /></div>
-              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Estimated Participants</label><input name="participants_count" type="number" placeholder="e.g., 50" className="form-field" /></div>
+
+              {/* National contingent */}
+              <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Contingent Information</h3>
+              <div className="grid md:grid-cols-2 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Nation or Culture Represented *</label><select name="country_represented" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Name of Contingent *</label><input name="contingent_name" required placeholder="e.g., Dominican Republic, India, Senegal..." className="form-field" /></div>
+              </div>
+
+              {/* Main Parade Coordinator */}
+              <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Main Parade Coordinator</h3>
+              <div className="grid md:grid-cols-2 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Coordinator Name *</label><input name="contact_title" required className="form-field" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Position</label><input name="coordinator_position" className="form-field" /></div>
+              </div>
+              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Coordinator Address</label><input name="coordinator_address" className="form-field" /></div>
+              <div className="grid md:grid-cols-3 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Coordinator Cell</label><input name="coordinator_cell" type="tel" className="form-field" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Bus. Tel.</label><input name="coordinator_bus_tel" type="tel" className="form-field" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Email</label><input name="coordinator_email" type="email" className="form-field" /></div>
+              </div>
+
+              {/* Contingent details */}
+              <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Contingent Components</h3>
+              <p className="text-xs text-gray-400 mb-4">Please indicate the approximate total number in each category.</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Organizations in Contingent</label><input name="org_count" type="number" className="form-field" placeholder="Number" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Total Performing Groups</label><input name="performing_groups" type="number" className="form-field" placeholder="Number" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Bands</label><input name="bands" type="number" className="form-field" placeholder="Number" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Floats</label><input name="floats" type="number" className="form-field" placeholder="Number" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Trucks w/Props & Sound</label><input name="trucks" type="number" className="form-field" placeholder="Number" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Open Cars / Cars</label><input name="cars" type="number" className="form-field" placeholder="Number" /></div>
+              </div>
+              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Total Estimated Participants *</label><input name="participants_count" type="number" required placeholder="e.g., 100" className="form-field" /></div>
+
+              {/* Additional from IA enhancements */}
+              <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Additional Participation Details</h3>
+              <div className="grid md:grid-cols-2 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Soccer / Fútbol or Sports Team?</label><select name="soccer_team" className="form-field"><option value="">Select...</option><option>Yes — adult team</option><option>Yes — children/youth team</option><option>Yes — both</option><option>No</option></select></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Youth / Children Participation</label><select name="youth_participation" className="form-field"><option value="">Select...</option><option>Yes — children</option><option>Yes — youth/teen group</option><option>No</option></select></div>
+              </div>
+              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Description of Cultural Showcase</label><textarea name="showcase_description" rows={3} placeholder="Uniforms, costumes, dances, flags, music, floats, national representation..." className="form-field" /></div>
+              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Grant Interest</label><select name="grant_interest" className="form-field"><option value="">Select...</option><option>Yes — we request grant consideration</option><option>No</option></select></div>
+
+              {/* Liability Insurance */}
+              <div className="bg-warm rounded-xl p-5 mb-5 border border-gray-100">
+                <label className="flex items-start gap-3">
+                  <input type="checkbox" required className="mt-1" />
+                  <span className="text-xs text-gray-600 leading-relaxed">Our organization agrees to indemnify and hold harmless the Immigrants Alliance, the Immigrants Foundation, the International Cultures Mission, and the City of New York from any and all claims for personal injury or property damage resulting from activities in connection with the NYC Parade Permit. Our organization attests that it has the necessary Liability Insurance and agrees to comply with all pertinent provisions of New York laws, rules, and regulations. This Agreement is subject to revocation for non-compliance.</span>
+                </label>
+              </div>
+
+              <p className="text-xs text-gray-400 mb-5">Non-Member Organizations: $5,000 contribution plus certified Liability Insurance. Email application and attachments to <a href="mailto:ImmigrantsAlliance@gmail.com" className="text-teal underline">ImmigrantsAlliance@gmail.com</a>. Pay via Zelle: ImmigrantsAlliance@gmail.com</p>
+
               <div className="text-center mt-8"><button type="submit" disabled={loading} className="btn-gold px-12 py-4 text-lg disabled:opacity-50">{loading ? 'Submitting...' : 'Submit Parade Registration →'}</button></div>
             </form>
           </div>
