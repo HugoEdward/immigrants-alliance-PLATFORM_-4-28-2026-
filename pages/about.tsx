@@ -9,8 +9,8 @@ const timeline = [
   { year: '1986', text: '1st International Cultures Conference, Passport to the World, and Immigrants Parade — Statue of Liberty centennial.' },
   { year: '1989', text: 'NGO Consultative Status with U.N. ECOSOC — unanimously endorsed.' },
   { year: 'Early 2000s', text: 'Immigrants Building at 7 West 44th Street & 5th Avenue established.' },
-  { year: '2024', text: '40th Immigrants Parade through Midtown Manhattan.' },
-  { year: '2026', text: '41st Parade (June 13). SEED launches September 15.' },
+  { year: '2024', text: '40th Annual Immigrants Parade through Midtown Manhattan — a historical milestone marking four unbroken decades of celebrating the world\'s cultures.' },
+  { year: '2026', text: '41st Annual International Cultures–Immigrants Parade — Saturday, June 13, 2026, 11:00 AM, Avenue of the Americas. S.E.E.D. launches September 15. A new chapter begins.' },
 ];
 
 export default function AboutPage() {

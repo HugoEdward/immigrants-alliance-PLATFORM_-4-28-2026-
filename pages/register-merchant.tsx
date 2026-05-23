@@ -38,7 +38,7 @@ export default function RegisterMerchant() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0A1628, #8B6914)' }} />
         <div className="relative z-10 max-w-3xl mx-auto px-6">
           <span className="section-label" style={{ color: '#E8C36A' }}>Federation Commerce</span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>Join the Alliance as a Merchant or Professional</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>Register as a Merchant or Professional</h1>
           <p className="text-base opacity-85 max-w-2xl mx-auto">Reach immigrant families who trust the Alliance. Offer your services to a growing community of members who value culturally aware businesses. Participate in cultural events and integrate with MundusPASS.</p>
           <p className="text-xs opacity-50 mt-3">MundusPASS-ready · Designed to connect with the Mundus.Center economic infrastructure</p>
         </div>

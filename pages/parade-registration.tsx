@@ -228,7 +228,7 @@ export default function ParadeRegistration() {
                 </label>
               </div>
 
-              <p className="text-xs text-gray-400 mb-5">Non-Member Organizations: $5,000 contribution plus certified Liability Insurance. Email application and attachments to <a href="mailto:ImmigrantsAlliance@gmail.com" className="text-teal underline">ImmigrantsAlliance@gmail.com</a>. Pay via Zelle: ImmigrantsAlliance@gmail.com</p>
+              <p className="text-xs text-gray-400 mb-5">Non-Member Organizations: $5,000 contribution plus certified Liability Insurance. Payment instructions will be provided after review and approval. Qualified organizations may receive grant support subject to eligibility, review, approval, and availability. Email application and attachments to <a href="mailto:ImmigrantsAlliance@gmail.com" className="text-teal underline">ImmigrantsAlliance@gmail.com</a>.</p>
 
               <div className="text-center mt-8"><button type="submit" disabled={loading} className="btn-gold px-12 py-4 text-lg disabled:opacity-50">{loading ? 'Submitting...' : 'Submit Parade Registration →'}</button></div>
             </form>
