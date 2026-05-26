@@ -58,6 +58,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ECONOMIC EMPOWERMENT */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="section-label">🌱 Sustainable Economic Empowerment & Development</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>Economic Empowerment for Organizations</h2>
+            <p className="text-gray-600 text-sm leading-relaxed">Your organization should not survive only on donations, volunteers, and emergency fundraising. Economic Empowerment helps socio-cultural organizations build sustainable income, activate members, enroll merchants, participate in Passport to the World, and strengthen their community for the long term.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5 mb-8">
+            {[
+              { level: 'Emerging Organization', d: 'Start organizing members, collecting dues, participating in programs, and building the foundation for sustainable support.' },
+              { level: 'Growing Federation', d: 'Activate chapters, merchants, professionals, sponsors, and cultural participation to grow recurring support.' },
+              { level: 'National Federation', d: 'Coordinate national contingents, member organizations, merchants, Passport to the World participation, pavilions, sponsorships, and long-term economic development.' },
+            ].map(c => (
+              <div key={c.level} className="card border-t-4 border-t-teal">
+                <h3 className="text-base font-bold text-navy mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>{c.level}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{c.d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-gray-400 italic max-w-xl mx-auto mb-8">Depending on activation, participation, membership growth, merchant enrollment, sponsorships, and program implementation, Economic Empowerment Member Organizations may work toward meaningful yearly sustainable income. Results are not guaranteed and depend on execution.</p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link href="/join-seed" className="btn-gold">Explore Economic Empowerment →</Link>
+            <Link href="/register-organization" className="btn-outline text-navy border-navy text-sm hover:bg-navy/5 no-underline">Register Your Organization →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* THREE PROMISES */}
       <section className="bg-warm py-14">
         <div className="max-w-7xl mx-auto px-6">
