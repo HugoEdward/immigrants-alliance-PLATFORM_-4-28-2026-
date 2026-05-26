@@ -157,6 +157,12 @@ export default function RegisterOrganization() {
 
               <div className="text-center mt-8"><button type="submit" disabled={loading} className="btn-gold px-12 py-4 text-lg disabled:opacity-50">{loading ? 'Submitting...' : 'Submit Application →'}</button></div>
             </form>
+            {/* Temporary contribution instructions */}
+            <div className="bg-warm rounded-xl p-5 mt-6 border border-gray-100">
+              <p className="text-xs text-navy font-bold mb-2">Contribution Information</p>
+              <p className="text-xs text-gray-500 leading-relaxed mb-2">After review and approval, qualified applicants will receive complete instructions for participation. Until MundusPASS / Stripe contribution processing is activated, you may send your contribution by Zelle to <a href="mailto:ImmigrantsAlliance@gmail.com" className="text-teal underline">ImmigrantsAlliance@gmail.com</a>. Please include the organization name, contact name, and application type in the memo.</p>
+              <p className="text-[0.6rem] text-gray-400 italic">This is a temporary contribution option while MundusPASS / Stripe is being activated. Permanent contribution processing will be handled through MundusPASS / Stripe once activated.</p>
+            </div>
             <div className="text-center mt-6 pt-6 border-t border-gray-100">
               <p className="text-gray-400 text-xs mb-2">Member Organizations participate free in the International Cultures Celebration.</p>
               <a href="/international-cultures-celebration" className="text-teal text-sm font-semibold hover:underline">Learn about the Celebration →</a>

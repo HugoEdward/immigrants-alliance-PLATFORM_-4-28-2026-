@@ -212,13 +212,20 @@ export default function ParadeRegistration() {
               <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Total Estimated Participants *</label><input name="participants_count" type="number" required placeholder="e.g., 100" className="form-field" /></div>
 
               {/* Additional from IA enhancements */}
-              <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Additional Participation Details</h3>
+              <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Participation Details</h3>
+              <div className="grid md:grid-cols-2 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Parade Marshal Name</label><input name="parade_marshal" className="form-field" placeholder="Name of your contingent's marshal" /></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Diplomatic Corps / Ambassador</label><input name="diplomatic_corps" className="form-field" placeholder="Ambassador, Consul General, Attaché..." /></div>
+              </div>
               <div className="grid md:grid-cols-2 gap-4 mb-5">
                 <div><label className="block font-semibold text-sm mb-1.5 text-navy">Soccer / Fútbol or Sports Team?</label><select name="soccer_team" className="form-field"><option value="">Select...</option><option>Yes — adult team</option><option>Yes — children/youth team</option><option>Yes — both</option><option>No</option></select></div>
                 <div><label className="block font-semibold text-sm mb-1.5 text-navy">Youth / Children Participation</label><select name="youth_participation" className="form-field"><option value="">Select...</option><option>Yes — children</option><option>Yes — youth/teen group</option><option>No</option></select></div>
               </div>
               <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Description of Cultural Showcase</label><textarea name="showcase_description" rows={3} placeholder="Uniforms, costumes, dances, flags, music, floats, national representation..." className="form-field" /></div>
-              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Grant Interest</label><select name="grant_interest" className="form-field"><option value="">Select...</option><option>Yes — we request grant consideration</option><option>No</option></select></div>
+              <div className="grid md:grid-cols-2 gap-4 mb-5">
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Grant Interest</label><select name="grant_interest" className="form-field"><option value="">Select...</option><option>Yes — we request grant consideration</option><option>No</option></select></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Lineup Notes / Special Requests</label><input name="lineup_notes" className="form-field" placeholder="Position preference, adjacency requests..." /></div>
+              </div>
 
               {/* Liability Insurance */}
               <div className="bg-warm rounded-xl p-5 mb-5 border border-gray-100">
@@ -232,6 +239,12 @@ export default function ParadeRegistration() {
 
               <div className="text-center mt-8"><button type="submit" disabled={loading} className="btn-gold px-12 py-4 text-lg disabled:opacity-50">{loading ? 'Submitting...' : 'Submit Parade Registration →'}</button></div>
             </form>
+            {/* Temporary contribution instructions */}
+            <div className="bg-warm rounded-xl p-5 mt-6 border border-gray-100">
+              <p className="text-xs text-navy font-bold mb-2">Contribution Information</p>
+              <p className="text-xs text-gray-500 leading-relaxed mb-2">Non-Member Organizations: $5,000 contribution. After review and approval, qualified applicants will receive complete instructions for participation. Until MundusPASS / Stripe contribution processing is activated, you may send your contribution by Zelle to <a href="mailto:ImmigrantsAlliance@gmail.com" className="text-teal underline">ImmigrantsAlliance@gmail.com</a>. Include organization name, contact name, and &ldquo;Parade 2026&rdquo; in the memo.</p>
+              <p className="text-[0.6rem] text-gray-400 italic">This is a temporary contribution option while MundusPASS / Stripe is being activated. Permanent contribution processing will be handled through MundusPASS / Stripe once activated.</p>
+            </div>
           </div>
         </div>
       </section>
