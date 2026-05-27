@@ -118,9 +118,9 @@ export default function RegisterOrganization() {
               <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Organization Details</h3>
               <div className="grid md:grid-cols-2 gap-4 mb-5">
                 <div><label className="block font-semibold text-sm mb-1.5 text-navy">Organization Type *</label><select name="type" required className="form-field"><option value="">Select...</option>{orgTypes.map(t => <option key={t} value={t}>{t}</option>)}</select></div>
-                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Country of Operation *</label><select name="country" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Country / Territory of Operation *</label><select name="country" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
               </div>
-              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Country / Culture Represented *</label><select name="country_represented" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
+              <div className="mb-5"><label className="block font-semibold text-sm mb-1.5 text-navy">Nation, Culture, or Community Represented *</label><select name="country_represented" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
 
               {/* Applying As */}
               <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">We Are Applying As</h3>

@@ -45,10 +45,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHO SHOULD MARCH */}
+      {/* WHO SHOULD PARADE */}
       <section className="py-14">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-navy text-center mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>Who Should March on June 13</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-navy text-center mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>Who Should Parade, Perform & Represent Their Culture on June 13</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {['National Contingents', 'Socio-Cultural Organizations', 'Immigrant & Diaspora Groups', 'Soccer / Fútbol Clubs', 'Youth & Children Teams', 'Dance, Music & Folk Groups', 'Cultural Schools & Bands', 'Faith-Based Organizations', 'Consulates & UN Missions', 'Cultural / Tourism Attachés', 'Chambers of Commerce', 'Families & Communities'].map(item => (
               <div key={item} className="bg-warm rounded-xl p-4 text-center border border-gray-100"><span className="text-xs text-navy font-medium">{item}</span></div>

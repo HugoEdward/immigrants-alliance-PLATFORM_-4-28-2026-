@@ -134,7 +134,7 @@ export default function ParadeRegistration() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
               { caption: 'National flags lining the Avenue of the Americas — a display of unity among nations' },
-              { caption: 'Families marching together — children carrying the cultures of their parents with pride' },
+              { caption: 'Families parading together — children carrying the cultures of their parents with pride' },
               { caption: 'Youth cultural groups performing traditional dances — the next generation preserving heritage' },
               { caption: 'Consul Generals presenting flags at the Presentation of Nations\' Flags Ceremony' },
               { caption: 'Floats and music from every continent — fifteen blocks of celebration on Sixth Avenue' },
@@ -181,7 +181,7 @@ export default function ParadeRegistration() {
               {/* National contingent */}
               <h3 className="text-sm font-bold text-navy uppercase tracking-wider mt-6 mb-4 border-b border-gray-100 pb-2">Contingent Information</h3>
               <div className="grid md:grid-cols-2 gap-4 mb-5">
-                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Nation or Culture Represented *</label><select name="country_represented" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
+                <div><label className="block font-semibold text-sm mb-1.5 text-navy">Nation, Culture, or Community Represented *</label><select name="country_represented" required className="form-field"><option value="">Select...</option>{countries.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
                 <div><label className="block font-semibold text-sm mb-1.5 text-navy">Name of Contingent *</label><input name="contingent_name" required placeholder="e.g., Dominican Republic, India, Senegal..." className="form-field" /></div>
               </div>
 
