@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="bg-gradient-to-r from-red-700 to-red-600 text-white text-center py-3 px-6 font-semibold text-sm tracking-wide relative z-50">
         🌐 <a href="/international-cultures-celebration" className="underline">International Cultures Celebration</a> · 41st International Cultures–Immigrants Parade | June 13, 2026 | NYC —{' '}
         <Link href="/parade-registration" className="text-yellow-300 font-bold underline hover:text-yellow-200">
-          Register for the Parade →
+          Register Now →
         </Link>{' '}
         | Deadline: May 30, 2026
       </div>

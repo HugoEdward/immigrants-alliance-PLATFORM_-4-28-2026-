@@ -18,7 +18,7 @@ const quickAnswers = [
   { q: 'How do I register my organization?', a: 'Organization membership is $100/month or $1,000/year. No dues for active S.E.E.D. Economic Empowerment members.', link: '/register-organization', cta: 'Register Organization →' },
   { q: 'How do I register for the Parade?', a: 'Submit the Parade Participation Agreement online. Member Organizations participate free. Non-members: $5,000 fee.', link: '/parade-registration', cta: 'Register for Parade →' },
   { q: 'Who can participate in the Parade?', a: 'National contingents, socio-cultural organizations, immigrant/diaspora groups, soccer/fútbol clubs, youth teams, dance/music/folklore groups, faith-based organizations, chambers of commerce, and diplomatic delegations.' },
-  { q: 'Can soccer/fútbol clubs participate?', a: 'Yes. Youth soccer and fútbol teams, adult teams, and cultural sports clubs are warmly invited to participate as part of their national or cultural contingent.' },
+  { q: 'Can soccer/fútbol clubs participate?', a: 'Yes. Youth soccer and fútbol teams, adult teams, and cultural sports clubs are warmly invited to march as part of their national contingent.' },
   { q: 'Can children and youth teams participate?', a: 'Yes. Children and youth cultural groups, youth soccer teams, and student organizations are welcome.' },
   { q: 'What is the Parade date and time?', a: '41st International Cultures–Immigrants Parade: Saturday, June 13, 2026, 11:00 AM, Avenue of the Americas, 42nd to 57th Street, NYC.' },
   { q: 'What documents are required?', a: 'Organization By-Laws and latest Resolution naming Elected Officers. Parade contingents also need certified Liability Insurance (non-members). Submit online or email to ImmigrantsAlliance@gmail.com.' },

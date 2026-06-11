@@ -86,34 +86,6 @@ export default function JoinSeed() {
         </div>
       </section>
 
-      {/* ═══ ROI Simulator ═══ */}
-      <section className="bg-warm py-14 border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <span className="section-label">Illustrative Scenario</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>See How Your Organization Could Work Toward Sustainable Income</h2>
-            <p className="text-gray-500 text-sm max-w-xl mx-auto">These are illustrative scenarios showing potential ecosystem participation models. Actual outcomes depend on activation, outreach, compliance, and approved program rules. No income is guaranteed.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              { level: 'Emerging Organization', amount: '$275,000', drivers: ['500 individual members', '20 merchants/professionals', 'Passport to the World card sales', 'Local sponsorship activation', 'Pavilion participation', 'Organization fundraising'] },
-              { level: 'Growing Federation', amount: '$550,000', drivers: ['2,000 individual members', '60 merchants/professionals', 'Passport to the World + pavilion revenue', 'Regional sponsorship activation', 'Merchant monthly memberships', 'Federation member dues'] },
-              { level: 'Highly Activated National Federation', amount: '$950,000+', drivers: ['5,000+ individual members', '150+ merchants/professionals', 'National sponsorship activation', 'Multiple pavilion activations', 'Closed-loop ecosystem participation', 'Federation-wide growth'] },
-            ].map(tier => (
-              <div key={tier.level} className="bg-white rounded-2xl border border-gray-100 p-6 text-center" style={{ boxShadow: '0 2px 8px rgba(10,22,40,.06)' }}>
-                <p className="text-xs text-teal font-bold uppercase tracking-wider mb-2">{tier.level}</p>
-                <p className="text-3xl font-extrabold text-navy mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>{tier.amount}</p>
-                <p className="text-xs text-gray-400 mb-4">potential pathway toward yearly sustainable income</p>
-                <div className="text-left space-y-1.5">
-                  {tier.drivers.map(d => <p key={d} className="text-xs text-gray-500 pl-4 relative before:content-['·'] before:absolute before:left-0 before:text-teal before:font-bold">{d}</p>)}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-[0.65rem] text-gray-400 mt-6 italic max-w-lg mx-auto">These scenarios are illustrative models, not income guarantees. Organizations may work toward these levels depending on activation, participation, and ecosystem engagement. S.E.E.D. is managed by Mundus.Center and powered by MundusPASS.</p>
-        </div>
-      </section>
-
       {/* ═══ We Understand ═══ */}
       <section className="py-16" aria-labelledby="challenges-h">
         <div className="max-w-7xl mx-auto px-6">
