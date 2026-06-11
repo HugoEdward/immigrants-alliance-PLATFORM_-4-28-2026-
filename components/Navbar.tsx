@@ -36,7 +36,7 @@ export default function Navbar() {
         <Link href="/parade-registration" className="text-yellow-300 font-bold underline hover:text-yellow-200">
           Register Now →
         </Link>{' '}
-        | Deadline: May 30, 2026
+        | THIS SATURDAY!
       </div>
 
       {/* Nav */}

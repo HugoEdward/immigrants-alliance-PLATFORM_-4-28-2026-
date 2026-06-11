@@ -3,50 +3,141 @@ import type { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
-    title: 'Home',
-    description: 'Immigrants Alliance — a federation connecting immigrant, diaspora, cultural, civic, and community organizations in 190+ countries. Economic Empowerment through S.E.E.D., International Cultures Celebration, and the International Cultures–Immigrants Parade.',
-    schema: {
-      '@context': 'https://schema.org', '@type': 'Event',
-      name: '41st International Cultures–Immigrants Parade',
-      startDate: '2026-06-13T11:00:00-04:00',
-      endDate: '2026-06-13T16:00:00-04:00',
-      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-      eventStatus: 'https://schema.org/EventScheduled',
-      location: { '@type': 'Place', name: 'Avenue of the Americas', address: { '@type': 'PostalAddress', streetAddress: '6th Avenue, 42nd to 57th Street', addressLocality: 'New York', addressRegion: 'NY', addressCountry: 'US' } },
-      organizer: { '@type': 'Organization', name: 'Immigrants Alliance', url: 'https://immigrantsalliance.org' },
-    },
+    title: 'Immigrants Are the Spirit of the World — 41st Parade THIS SATURDAY',
+    description: '41st International Cultures–Immigrants Parade: THIS SATURDAY June 13, 2026, 11AM, Avenue of the Americas, 42nd–57th St, NYC. Immigrants are the engine of every developed nation. Join us!',
+    schema: [
+      {
+        '@context': 'https://schema.org', '@type': 'Event',
+        name: '41st International Cultures–Immigrants Parade',
+        startDate: '2026-06-13T11:00:00-04:00',
+        endDate: '2026-06-13T16:00:00-04:00',
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        eventStatus: 'https://schema.org/EventScheduled',
+        location: { '@type': 'Place', name: 'Avenue of the Americas, Midtown Manhattan', address: { '@type': 'PostalAddress', streetAddress: '6th Avenue, 42nd to 57th Street', addressLocality: 'New York', addressRegion: 'NY', addressCountry: 'US' } },
+        organizer: { '@type': 'Organization', name: 'Immigrants Alliance', url: 'https://immigrantsalliance.org' },
+        description: 'The 41st International Cultures Celebration and Immigrants Parade. A vibrant showcase of dances, music, floats, and traditions from every continent.',
+        image: 'https://immigrantsalliance.org/IMMIGRANTS_ALLIANCE_Logo.jpg',
+        isAccessibleForFree: true,
+      },
+      {
+        '@context': 'https://schema.org', '@type': 'NGO',
+        name: 'Immigrants Alliance', url: 'https://immigrantsalliance.org',
+        foundingDate: '1976', areaServed: 'Worldwide',
+        memberOf: { '@type': 'Organization', name: 'United Nations ECOSOC' },
+      },
+    ],
   },
 });
 
 export default function HomePage() {
   return (
     <>
-      {/* ═══ HERO — 5-second clarity ═══ */}
-      <section className="relative overflow-hidden text-white" style={{ padding: '80px 0 100px' }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&q=80')" }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(10,22,40,.92), rgba(27,58,92,.85), rgba(14,124,107,.8))' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="max-w-2xl">
-            <div className="inline-block bg-gold/20 border border-gold text-gold-light px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5">Since 1976 · UN ECOSOC · 190+ Countries</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 leading-[1.08]" style={{ fontFamily: 'Playfair Display, serif' }}>
-              You left everything behind<br />so your family could have<br /><span className="text-gold-light">everything ahead.</span>
+      {/* ═══════════════════════════════════════════════════════
+          PARADE HERO — THIS SATURDAY — Maximum urgency
+          ═══════════════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden text-white" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+        {/* Animated gradient background */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(135deg, #0A1628 0%, #1B3A5C 25%, #0E7C6B 50%, #C9A84C 75%, #C0392B 100%)',
+          backgroundSize: '400% 400%',
+          animation: 'gradientShift 12s ease infinite',
+        }} />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.15), transparent 70%)' }} />
+
+        <style jsx>{`
+          @keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+          @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+          @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        `}</style>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 w-full">
+          <div className="text-center max-w-4xl mx-auto">
+
+            {/* THIS SATURDAY badge */}
+            <div className="inline-block mb-6" style={{ animation: 'pulse 2s ease infinite' }}>
+              <div className="bg-red-600 text-white px-8 py-3 rounded-full text-lg md:text-xl font-black tracking-wide uppercase shadow-2xl border-2 border-red-400">
+                🎉 THIS SATURDAY — JUNE 13
+              </div>
+            </div>
+
+            {/* Main headline */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.05]" style={{ fontFamily: 'Playfair Display, serif', animation: 'fadeInUp 0.8s ease' }}>
+              Immigrants Are<br />
+              <span className="text-gold-light" style={{ textShadow: '0 0 40px rgba(201,168,76,0.4)' }}>the Spirit of the World!</span>
             </h1>
-            <p className="text-lg leading-relaxed opacity-90 mb-8 font-light max-w-lg">
-              From Lagos to Lima, Damascus to Dhaka — you carried your family and your culture across borders most people will never cross. Immigrants Alliance exists so you never face what comes next alone.
+
+            {/* Sub-headlines */}
+            <div className="space-y-2 mb-8" style={{ animation: 'fadeInUp 1s ease' }}>
+              <p className="text-xl md:text-2xl font-bold text-white/90">
+                The Engine of the Economy of Every Developed Nation.
+              </p>
+              <p className="text-lg md:text-xl text-gold-light font-semibold italic">
+                Let&rsquo;s Showcase This Saturday — Our Strength Together!
+              </p>
+            </div>
+
+            {/* Event details — big and clear */}
+            <div className="bg-white/[.08] backdrop-blur-sm border border-gold/40 rounded-2xl p-6 md:p-8 max-w-2xl mx-auto mb-8" style={{ animation: 'fadeInUp 1.2s ease' }}>
+              <div className="text-3xl md:text-4xl font-black text-gold-light mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
+                41st International Cultures–Immigrants Parade
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left mt-6">
+                <div className="text-center">
+                  <div className="text-3xl mb-1">📅</div>
+                  <div className="text-white font-bold text-lg">Saturday</div>
+                  <div className="text-gold-light text-sm font-semibold">June 13, 2026</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-1">🕚</div>
+                  <div className="text-white font-bold text-lg">11:00 AM</div>
+                  <div className="text-gold-light text-sm font-semibold">Step-Off</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-1">📍</div>
+                  <div className="text-white font-bold text-lg">6th Avenue</div>
+                  <div className="text-gold-light text-sm font-semibold">42nd → 57th Street</div>
+                </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10 text-center">
+                <span className="text-white/60 text-sm">Midtown Manhattan, New York City</span>
+                <span className="mx-2 text-white/30">·</span>
+                <span className="text-white/60 text-sm">FREE for Member Organizations</span>
+              </div>
+            </div>
+
+            {/* CTAs — large and urgent */}
+            <div className="flex gap-4 justify-center flex-wrap mb-8" style={{ animation: 'fadeInUp 1.4s ease' }}>
+              <Link href="/parade-registration" className="bg-gold text-navy px-8 py-4 rounded-xl font-black text-lg no-underline hover:bg-gold-light transition-all shadow-lg hover:shadow-2xl hover:-translate-y-0.5">
+                🎉 Register for the Parade →
+              </Link>
+              <Link href="/register-organization" className="bg-white/10 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-lg no-underline hover:bg-white/20 hover:border-gold transition-all">
+                Register Your Organization
+              </Link>
+            </div>
+
+            {/* Flags — visual representation of unity */}
+            <div className="text-2xl md:text-3xl leading-loose opacity-80" style={{ animation: 'fadeInUp 1.6s ease' }}>
+              🇺🇸 🇲🇽 🇨🇴 🇧🇷 🇭🇹 🇩🇴 🇯🇲 🇪🇨 🇵🇪 🇬🇹 🇭🇳 🇸🇻 🇳🇬 🇬🇭 🇸🇳 🇪🇹 🇮🇳 🇵🇰 🇧🇩 🇨🇳 🇵🇭 🇰🇷 🇻🇳 🇮🇷 🇵🇸 🇱🇧 🇪🇬 🇲🇦 🇵🇱 🇮🇪 🇮🇹 🇵🇹 🇬🇧 🇩🇪 🇫🇷 🇹🇷 🇯🇵 🇹🇭
+            </div>
+
+            <p className="text-white/50 text-sm mt-4">
+              Since 1976 · UN ECOSOC Consultative Status since 1989 · 190+ Countries
             </p>
-            <div className="flex gap-3 flex-wrap">
-              <Link href="/register-organization" className="btn-gold">Register Your Organization →</Link>
-              <Link href="/parade-registration" className="btn-outline">🎉 Register for the Parade</Link>
-            </div>
-            <div className="mt-6 bg-white/[.06] border border-white/10 rounded-xl px-5 py-3 inline-block">
-              <p className="text-gold-light text-sm font-bold">First 1,000,000 Founding Members Join Free for Life</p>
-              <p className="text-white/60 text-xs mt-1">Individual members — <Link href="/register" className="text-gold underline">join now</Link></p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ TRUST BAR — immediate credibility ═══ */}
+      {/* ═══ ALL CULTURES WELCOME BANNER ═══ */}
+      <section className="bg-gold py-8">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-navy text-lg md:text-xl font-bold leading-relaxed">
+            Immigrants from <strong>ALL</strong> cultural backgrounds — including Iranians, Palestinians, and communities from every nation on Earth — are encouraged and welcome at Immigrants Alliance and to participate in ALL our programs and events.
+          </p>
+          <Link href="/register" className="inline-block bg-navy text-white px-6 py-3 rounded-lg font-bold text-sm mt-4 no-underline hover:bg-opacity-90">Join Free — First 1,000,000 Members →</Link>
+        </div>
+      </section>
+
+      {/* ═══ TRUST BAR ═══ */}
       <section className="bg-navy border-b-[3px] border-gold">
         <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[{ n: '190+', l: 'Countries' }, { n: '1976', l: 'Founded' }, { n: '41', l: 'Annual Parades' }, { n: '🇺🇳', l: 'UN ECOSOC Status' }].map(s => (
@@ -58,7 +149,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ WHAT WE DO — 3 clear promises ═══ */}
+      {/* ═══ WHAT WE DO ═══ */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-10">
@@ -80,7 +171,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ FOUR PATHWAYS — one clear section for all audiences ═══ */}
+      {/* ═══ FOUR PATHWAYS ═══ */}
       <section className="bg-navy py-16 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-10">
@@ -90,7 +181,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { icon: '🏛', t: 'Organizations', d: 'Join the federation. Access Economic Empowerment through S.E.E.D., free Celebration participation, and international visibility.', href: '/register-organization', cta: 'Register →' },
-              { icon: '🎉', t: 'Parade', d: 'June 13, 2026. Avenue of the Americas. Your culture, your music, your moment. Free for members.', href: '/parade-registration', cta: 'Register →' },
+              { icon: '🎉', t: 'Parade — THIS SATURDAY', d: 'June 13, 2026. Avenue of the Americas. 11 AM. Your culture, your music, your moment. Free for members.', href: '/parade-registration', cta: 'Register Now →' },
               { icon: '🌱', t: 'Economic Empowerment', d: 'Build sustainable income through S.E.E.D. — membership, merchants, Passport to the World, and MundusPASS.', href: '/join-seed', cta: 'Apply →' },
               { icon: '🌐', t: 'Celebration', d: 'A week-long Mini-World\u2019s Fair — national pavilions, conference at the UN, awards, and the Parade. June 2027.', href: '/international-cultures-celebration', cta: 'Explore →' },
             ].map(p => (
@@ -105,7 +196,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ WHY CITIES NEED IMMIGRANTS — the argument ═══ */}
+      {/* ═══ WHY CITIES NEED IMMIGRANTS ═══ */}
       <section className="bg-warm py-14">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-2xl font-bold mb-6 text-navy text-center" style={{ fontFamily: 'Playfair Display, serif' }}>Why your city needs immigrants</h2>
@@ -117,7 +208,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ SAFETY INTELLIGENCE — compact ═══ */}
+      {/* ═══ SAFETY INTELLIGENCE ═══ */}
       <section className="py-14">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-bold mb-6 text-navy text-center" style={{ fontFamily: 'Playfair Display, serif' }}>Know before you go</h2>
@@ -137,7 +228,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ GLOBAL VOICES — 3 featured stories, not 9 ═══ */}
+      {/* ═══ STORIES ═══ */}
       <section className="bg-warm py-14">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between mb-6">
@@ -147,8 +238,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-5">
             {[
               { type: 'Story', title: 'From a Suitcase to 40 Employees', desc: 'Amara arrived in Toronto from Lagos with two bags. Today she runs a catering company celebrating three continents.', tag: 'Lagos → Toronto' },
-              { type: 'Mayor', title: '"This City Would Not Function Without Immigrants"', desc: 'A German mayor explains why his administration actively recruits immigrant families and entrepreneurs.', tag: 'Duisburg, Germany' },
-              { type: 'Success', title: 'Undocumented at Nine. Doctor at Twenty-Three.', desc: 'Dr. Reyes chose to practice in the community that raised her — because they never gave up on her.', tag: 'Southwest USA' },
+              { type: 'Mayor', title: '\u201CThis City Would Not Function Without Immigrants\u201D', desc: 'A German mayor explains why his administration actively recruits immigrant families and entrepreneurs.', tag: 'Duisburg, Germany' },
+              { type: 'Success', title: 'Undocumented at Nine. Doctor at Twenty-Three.', desc: 'Dr. Reyes chose to practice in the community that raised her \u2014 because they never gave up on her.', tag: 'Southwest USA' },
             ].map(v => (
               <article key={v.title} className="card">
                 <span className="bg-gold/15 text-gold-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">{v.type}</span>
@@ -158,11 +249,10 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          <div className="text-center mt-6 md:hidden"><Link href="/voices" className="text-teal text-sm font-semibold hover:underline no-underline">All stories →</Link></div>
         </div>
       </section>
 
-      {/* ═══ SOCIAL PROOF — testimonials ═══ */}
+      {/* ═══ TESTIMONIALS ═══ */}
       <section className="py-14">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-5">
@@ -183,16 +273,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ FINAL CTA — one clear action ═══ */}
-      <section className="bg-navy py-14 text-white text-center">
+      {/* ═══ FINAL CTA — PARADE FOCUS ═══ */}
+      <section className="py-16 text-white text-center" style={{ background: 'linear-gradient(135deg, #0A1628, #1B3A5C, #0E7C6B)' }}>
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
-            You traveled thousands of miles.<br /><span className="text-gold-light">We are here to help you build what comes next.</span>
+          <div className="text-4xl mb-4">🌍</div>
+          <h2 className="text-3xl md:text-4xl font-black mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            This Saturday, We March Together.
           </h2>
-          <p className="text-white/50 mb-8 max-w-md mx-auto text-sm">190+ countries. Every language, every faith, every background.</p>
+          <p className="text-xl text-gold-light font-bold mb-2">
+            June 13 · 11 AM · Avenue of the Americas · 42nd to 57th Street
+          </p>
+          <p className="text-white/50 mb-8 max-w-md mx-auto text-sm">190+ countries. Every language, every faith, every background. All welcome.</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/register-organization" className="btn-gold text-base px-8 py-3.5">Register Your Organization →</Link>
-            <Link href="/parade-registration" className="btn-outline text-base px-8 py-3.5">Register for the Parade →</Link>
+            <Link href="/parade-registration" className="bg-gold text-navy px-8 py-4 rounded-xl font-black text-lg no-underline hover:bg-gold-light transition-all shadow-lg">🎉 Register for the Parade →</Link>
+            <Link href="/register" className="bg-white/10 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-lg no-underline hover:bg-white/20 transition-all">Join Free →</Link>
           </div>
         </div>
       </section>
