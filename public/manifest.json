@@ -1,0 +1,20 @@
+{
+  "name": "Immigrants Alliance",
+  "short_name": "IA",
+  "description": "A global federation connecting immigrant organizations in 190+ countries. Unite. Empower. Thrive.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1628",
+  "theme_color": "#0A1628",
+  "orientation": "portrait-primary",
+  "categories": ["social", "nonprofit", "education"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/IMMIGRANTS_ALLIANCE_Logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
