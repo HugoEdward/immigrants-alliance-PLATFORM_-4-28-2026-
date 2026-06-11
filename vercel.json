@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.immigrantsalliance.org" }],
+      "destination": "https://immigrantsalliance.org/$1",
+      "permanent": true
+    }
+  ]
+}
