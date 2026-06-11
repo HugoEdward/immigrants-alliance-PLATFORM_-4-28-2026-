@@ -3,7 +3,7 @@ import type { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
-    title: 'Immigrants Are the Spirit of the World — Parade This Saturday in NYC',
+    title: 'Immigrants Are the Spirit of the World — Our Parade, is This Saturday in NYC',
     description: 'Immigrants Alliance — 41st International Cultures–Immigrants Parade, Saturday June 13, 2026, 11:00 AM, Avenue of the Americas from 42nd to 57th Street, NYC. Register your organization, national contingent, soccer/fútbol club, youth team, band, or cultural group.',
     schema: [
       {
