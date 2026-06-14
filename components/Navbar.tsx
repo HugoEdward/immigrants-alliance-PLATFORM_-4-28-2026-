@@ -6,7 +6,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/programs', label: 'Programs' },
-  { href: '/parade-registration', label: '🎉 2026 Parade', highlight: true },
+  { href: '/parade-registration', label: '2026 Parade', highlight: true },
   { href: '/international-cultures-celebration', label: 'Celebration' },
   { href: '/world', label: 'World' },
   { href: '/voices', label: 'Voices' },
@@ -30,13 +30,12 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Urgent Banner */}
-      <div className="bg-gradient-to-r from-red-700 to-red-600 text-white text-center py-3 px-6 font-semibold text-sm tracking-wide relative z-50">
-        🌐 <a href="/international-cultures-celebration" className="underline">International Cultures Celebration</a> · 41st International Cultures–Immigrants Parade | June 13, 2026 | NYC —{' '}
-        <Link href="/parade-registration" className="text-yellow-300 font-bold underline hover:text-yellow-200">
-          Register Now →
-        </Link>{' '}
-        | THIS SATURDAY!
+      {/* Post-Parade Thank You Banner */}
+      <div className="bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 text-white text-center py-3 px-6 font-semibold text-sm tracking-wide relative z-50">
+        🌐 Thank You to All Participating Communities — 41st International Cultures–Immigrants Parade —{' '}
+        <Link href="/international-cultures-celebration" className="text-white font-bold underline hover:text-yellow-200">
+          Celebration 2027 · June · NYC →
+        </Link>
       </div>
 
       {/* Nav */}
@@ -113,7 +112,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/register" className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm ml-2 hover:bg-gold-light no-underline transition-all inline-block" onClick={() => setOpen(false)}>
-                Join Now
+                Learn More
               </Link>
             </li>
           </ul>
