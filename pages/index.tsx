@@ -4,8 +4,8 @@ import type { CSSProperties } from 'react';
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
-    title: 'Immigrants Alliance — Uniting Cultures. Empowering Communities. Celebrating Humanity.',
-    description: 'A nonpartisan, secular, multicultural economic development organization. UN ECOSOC Consultative Status since 1989. International Cultures Celebration, Immigrants Parade, S.E.E.D., Global Voices. 190+ countries.',
+    title: 'Thank You — 41st International Cultures–Immigrants Parade — Immigrants Alliance',
+    description: 'Thank you to all communities who made the 41st International Cultures–Immigrants Parade a celebration of unity and culture. Preparations begin for the International Cultures Celebration 2027 in New York City.',
     schema: [{ '@context': 'https://schema.org', '@type': 'NGO', name: 'Immigrants Alliance', url: 'https://immigrantsalliance.org', foundingDate: '1976', areaServed: 'Worldwide', memberOf: { '@type': 'Organization', name: 'United Nations ECOSOC' } }],
   },
 });
@@ -20,60 +20,82 @@ export default function HomePage() {
   return (
     <>
       <style jsx>{`
-        .hero{position:relative;min-height:88vh;display:flex;align-items:center;background:#0A1628;overflow:hidden}
-        .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1600&q=80');background-size:cover;background-position:center;opacity:.25}
-        .hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.92) 0%,rgba(10,22,40,.8) 40%,rgba(13,34,64,.7) 100%)}
-        .hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center;padding:60px 24px}
+        .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:#0A1628;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1600&q=80');background-size:cover;background-position:center;opacity:.2}
+        .hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,40,.85) 0%,rgba(10,22,40,.95) 100%)}
+        .hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto;text-align:center;padding:80px 24px}
+        .s2{position:relative;overflow:hidden;padding:80px 24px;background:#0D2240}
+        .s2-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&q=80');background-size:cover;background-position:center;opacity:.12}
+        .s2-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,34,64,.92),rgba(10,22,40,.88))}
+        .s2-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center}
         .imp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;max-width:1140px;margin:0 auto}
         .imp-cell{padding:32px 16px;text-align:center}
         .pg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
         .pc{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:28px 20px;text-decoration:none;display:block;transition:border-color .2s,transform .2s}
         .pc:hover{border-color:#C9A84C;transform:translateY(-3px)}
         .fg{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-        .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-        .cc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:24px;text-align:center}
+        .c27{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+        .c27c{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:24px;text-align:center}
         .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
         .tc{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:10px;padding:28px;margin:0}
         .pr{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center;margin-top:28px}
-        @media(max-width:900px){.imp-grid{grid-template-columns:repeat(2,1fr)}.pg{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr}.cg{grid-template-columns:1fr}.tg{grid-template-columns:1fr}}
+        @media(max-width:900px){.imp-grid{grid-template-columns:repeat(2,1fr)}.pg{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr}.c27{grid-template-columns:1fr}.tg{grid-template-columns:1fr}}
         @media(max-width:600px){.imp-grid{grid-template-columns:1fr}.pg{grid-template-columns:1fr}}
       `}</style>
 
-      {/* 1. HERO */}
+      {/* ═══ 1. HERO — THANK YOU ═══ */}
       <section className="hero">
         <div className="hero-bg" />
         <div className="hero-grad" />
         <div className="hero-inner">
-          <div style={label}>Since 1976 · UN ECOSOC Consultative Status Since 1989 · 190+ Countries</div>
-          <h1 style={{...h2s,fontSize:'clamp(2rem,5vw,3.4rem)',color:'#fff',marginBottom:'20px'}}>
-            Uniting Cultures.<br />
-            <span style={{color:'#C9A84C'}}>Empowering Communities.</span><br />
-            Celebrating Humanity.
+          <div style={label}>41st International Cultures—Immigrants Parade · June 13, 2026 · New York City</div>
+          <h1 style={{...h2s,fontSize:'clamp(2rem,5vw,3.2rem)',color:'#fff',marginBottom:'24px'}}>
+            Thank You to All<br />
+            <span style={{color:'#C9A84C'}}>Participating Communities</span>
           </h1>
-          <p style={{color:'rgba(255,255,255,.65)',fontSize:'1rem',lineHeight:1.75,maxWidth:'680px',margin:'0 auto 32px'}}>
-            Immigrants Alliance brings together communities, organizations, cultural institutions, businesses, and individuals to advance intercultural understanding, economic empowerment, and global cooperation.
+          <p style={{color:'rgba(255,255,255,.72)',fontSize:'1rem',lineHeight:1.8,maxWidth:'720px',margin:'0 auto 20px'}}>
+            Immigrants Alliance extends its heartfelt thanks to all participating communities, cultural leaders, volunteers, performers, organizations, families, sponsors, and supporters who helped make the 41st International Cultures—Immigrants Parade a meaningful celebration of unity, dignity, culture, and community.
+          </p>
+          <p style={{color:'#C9A84C',fontSize:'1rem',lineHeight:1.7,fontWeight:600,marginBottom:'16px'}}>
+            We wish everyone a joyful, peaceful, and healthy summer.
+          </p>
+          <p style={{color:'rgba(255,255,255,.6)',fontSize:'0.92rem',lineHeight:1.75,maxWidth:'660px',margin:'0 auto 16px'}}>
+            We are proud to announce the beginning of preparations for the <strong style={{color:'#fff'}}>next International Cultures Celebration, scheduled for the second week of June 2027</strong> in New York City.
+          </p>
+          <p style={{color:'rgba(255,255,255,.55)',fontSize:'0.9rem',lineHeight:1.7,fontStyle:'italic',marginBottom:'32px'}}>
+            Together, we continue to unite cultures, empower communities, and celebrate the people of the world.
           </p>
           <div style={{display:'flex',gap:'12px',justifyContent:'center',flexWrap:'wrap'}}>
-            <Link href="/international-cultures-celebration" style={btnGold}>International Cultures Celebration</Link>
-            <Link href="/programs" style={btnOutline}>Our Programs</Link>
-            <Link href="/register" style={{...btnOutline,borderColor:'rgba(201,168,76,.4)',color:'#C9A84C'}}>Join the Movement</Link>
+            <Link href="/international-cultures-celebration" style={btnGold}>International Cultures Celebration 2027</Link>
+            <Link href="/programs" style={btnOutline}>Explore Programs</Link>
           </div>
         </div>
       </section>
 
-      {/* THANK YOU */}
-      <section style={{padding:'60px 24px',background:'#C9A84C'}}>
-        <div style={{maxWidth:'800px',margin:'0 auto',textAlign:'center'}}>
-          <h2 style={{...h2s,fontSize:'1.6rem',color:'#0A1628',marginBottom:'14px'}}>Thank You to All Participating Communities</h2>
-          <p style={{color:'#0A1628',fontSize:'0.92rem',lineHeight:1.75,marginBottom:'12px'}}>Immigrants Alliance extends its heartfelt thanks to all participating communities, cultural leaders, volunteers, performers, organizations, families, sponsors, and supporters who helped make the 41st International Cultures—Immigrants Parade a meaningful celebration of unity, dignity, culture, and community.</p>
-          <p style={{color:'#0A1628',fontSize:'0.92rem',lineHeight:1.75,marginBottom:'12px',fontWeight:600}}>We wish everyone a joyful, peaceful, and healthy summer.</p>
-          <p style={{color:'#0A1628',fontSize:'0.92rem',lineHeight:1.75}}>We are proud to announce the beginning of preparations for the <strong>next International Cultures Celebration, scheduled for the second week of June 2027</strong> in New York City.</p>
-          <p style={{color:'#0A1628',fontSize:'0.88rem',lineHeight:1.7,marginTop:'14px',fontStyle:'italic'}}>Together, we continue to unite cultures, empower communities, and celebrate the people of the world.</p>
+      {/* ═══ 2. MISSION (former hero) ═══ */}
+      <section className="s2">
+        <div className="s2-bg" />
+        <div className="s2-grad" />
+        <div className="s2-inner">
+          <div style={label}>Since 1976 · UN ECOSOC Consultative Status Since 1989 · 190+ Countries</div>
+          <h2 style={{...h2s,fontSize:'clamp(1.8rem,4vw,2.8rem)',color:'#fff',marginBottom:'18px'}}>
+            Uniting Cultures.<br />
+            <span style={{color:'#C9A84C'}}>Empowering Communities.</span><br />
+            Celebrating Humanity.
+          </h2>
+          <p style={{color:'rgba(255,255,255,.6)',fontSize:'0.95rem',lineHeight:1.75,maxWidth:'660px',margin:'0 auto 28px'}}>
+            Immigrants Alliance brings together communities, organizations, cultural institutions, businesses, and individuals to advance intercultural understanding, economic empowerment, and global cooperation.
+          </p>
+          <div style={{display:'flex',gap:'12px',justifyContent:'center',flexWrap:'wrap'}}>
+            <Link href="/programs" style={btnGold}>Explore Programs</Link>
+            <Link href="/join-seed" style={btnOutline}>Economic Empowerment</Link>
+            <Link href="/international-cultures-celebration" style={{...btnOutline,borderColor:'rgba(201,168,76,.4)',color:'#C9A84C'}}>Celebration 2027</Link>
+          </div>
         </div>
       </section>
 
-      {/* 2. IMPACT */}
-      <div style={{background:'#0D2240',borderTop:'3px solid #C9A84C'}}>
+      {/* ═══ 3. IMPACT ═══ */}
+      <div style={{background:'#0A1628',borderTop:'3px solid #C9A84C',borderBottom:'3px solid rgba(201,168,76,.2)'}}>
         <div className="imp-grid">
           {[
             {n:'41',l:'Years of Celebration'},
@@ -90,8 +112,8 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 3. PROGRAMS */}
-      <section style={{padding:'80px 24px',background:'#0A1628'}}>
+      {/* ═══ 4. PROGRAMS ═══ */}
+      <section style={{padding:'80px 24px',background:'#0D2240'}}>
         <div style={{maxWidth:'1140px',margin:'0 auto'}}>
           <div style={{textAlign:'center'}}>
             <div style={label}>Programs &amp; Initiatives</div>
@@ -100,28 +122,28 @@ export default function HomePage() {
           </div>
           <div className="pg">
             {[
-              {icon:'🌱',t:'S.E.E.D. Economic Empowerment',d:'Helping organizations, merchants, and entrepreneurs grow through cooperation and shared prosperity.',href:'/join-seed'},
-              {icon:'🎪',t:'International Cultures Celebration',d:'A week-long celebration — conference, pavilions, cultural exchange, Passport to the World, and the Parade.',href:'/international-cultures-celebration'},
-              {icon:'🎉',t:'International Cultures—Immigrants Parade',d:'41 years of uniting communities through performance, tradition, and cultural pride.',href:'/parade-registration'},
-              {icon:'🎤',t:'Global Voices',d:'Amplifying immigrant stories, leadership, and the voices that build bridges between cultures.',href:'/voices'},
-              {icon:'🌐',t:'Passport to the World',d:'A cultural journey through national pavilions, cuisine, art, music, and heritage from every continent.',href:'/international-cultures-celebration'},
-              {icon:'🏙️',t:'Safe Cities',d:'Comparing cities by safety, support services, and community strength for immigrant communities.',href:'/live/safe-cities'},
-              {icon:'📊',t:'Discrimination Monitor',d:'Community-reported incidents by city, type, and severity. Track and report hate incidents.',href:'/live/discrimination'},
-              {icon:'🗺️',t:'Danger Map',d:'Real-time safety intelligence — risk levels by city and country. Know before you go.',href:'/live/danger-map'},
+              {icon:'🌱',t:'S.E.E.D. Economic Empowerment',d:'Helping organizations, merchants, and entrepreneurs grow through cooperation and shared prosperity.',href:'/join-seed',cta:'Learn More →'},
+              {icon:'🎪',t:'International Cultures Celebration',d:'A week-long celebration — conference, pavilions, cultural exchange, Passport to the World, and the Parade.',href:'/international-cultures-celebration',cta:'Learn More →'},
+              {icon:'🎉',t:'International Cultures—Immigrants Parade',d:'The 41st International Cultures—Immigrants Parade concluded successfully, bringing together communities from around the world in a celebration of culture, dignity, unity, and cooperation.',href:'/parade-registration',cta:'View Highlights →'},
+              {icon:'🎤',t:'Global Voices',d:'Amplifying immigrant stories, leadership, and the voices that build bridges between cultures.',href:'/voices',cta:'Learn More →'},
+              {icon:'🌐',t:'Passport to the World',d:'A cultural journey through national pavilions, cuisine, art, music, and heritage from every continent.',href:'/international-cultures-celebration',cta:'Learn More →'},
+              {icon:'🏙️',t:'Safe Cities',d:'Comparing cities by safety, support services, and community strength for immigrant communities.',href:'/live/safe-cities',cta:'Learn More →'},
+              {icon:'📊',t:'Discrimination Monitor',d:'Community-reported incidents by city, type, and severity. Track and report hate incidents.',href:'/live/discrimination',cta:'Learn More →'},
+              {icon:'🗺️',t:'Danger Map',d:'Real-time safety intelligence — risk levels by city and country. Know before you go.',href:'/live/danger-map',cta:'Learn More →'},
             ].map((c) => (
               <Link key={c.t} href={c.href} className="pc">
                 <div style={{fontSize:'1.6rem',marginBottom:'10px'}}>{c.icon}</div>
                 <h3 style={{fontFamily:'Playfair Display,Georgia,serif',fontSize:'0.92rem',fontWeight:700,color:'#C9A84C',marginBottom:'6px'}}>{c.t}</h3>
                 <p style={{fontSize:'0.78rem',color:'rgba(255,255,255,.55)',lineHeight:1.6,marginBottom:'10px'}}>{c.d}</p>
-                <span style={{fontSize:'0.78rem',color:'#C9A84C',fontWeight:600}}>Learn More →</span>
+                <span style={{fontSize:'0.78rem',color:'#C9A84C',fontWeight:600}}>{c.cta}</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. FEATURED S.E.E.D. */}
-      <section style={{padding:'80px 24px',background:'#0D2240'}}>
+      {/* ═══ 5. FEATURED S.E.E.D. ═══ */}
+      <section style={{padding:'80px 24px',background:'#0A1628'}}>
         <div style={{maxWidth:'1140px',margin:'0 auto'}}>
           <div className="fg">
             <div>
@@ -143,15 +165,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. CELEBRATION 2027 */}
-      <section style={{padding:'80px 24px',background:'#0A1628'}}>
+      {/* ═══ 6. CELEBRATION 2027 — PROMINENT ═══ */}
+      <section style={{padding:'90px 24px',background:'linear-gradient(135deg,#0D2240,#0A1628)'}}>
         <div style={{maxWidth:'1140px',margin:'0 auto',textAlign:'center'}}>
-          <div style={label}>Coming June 2027</div>
-          <h2 style={{...h2s,fontSize:'2rem',color:'#fff',marginBottom:'6px'}}>International Cultures Celebration 2027</h2>
-          <p style={{fontFamily:'Playfair Display,Georgia,serif',fontSize:'1.1rem',color:'#C9A84C',marginBottom:'8px'}}>Second Week of June 2027 · New York City</p>
+          <div style={{...label,fontSize:'0.8rem',letterSpacing:'0.25em'}}>The Next Major Event</div>
+          <h2 style={{...h2s,fontSize:'clamp(1.8rem,4vw,2.6rem)',color:'#fff',marginBottom:'6px'}}>International Cultures Celebration 2027</h2>
+          <p style={{fontFamily:'Playfair Display,Georgia,serif',fontSize:'1.15rem',color:'#C9A84C',marginBottom:'8px'}}>Second Week of June 2027 · New York City</p>
           <div style={goldLine} />
-          <p style={{color:'rgba(255,255,255,.6)',fontSize:'0.9rem',lineHeight:1.75,maxWidth:'650px',margin:'0 auto 28px'}}>A week-long celebration of world cultures — bringing together communities, organizations, performers, and cultural leaders from every continent.</p>
-          <div className="cg">
+          <p style={{color:'rgba(255,255,255,.6)',fontSize:'0.95rem',lineHeight:1.75,maxWidth:'660px',margin:'0 auto 32px'}}>A week-long celebration of world cultures — bringing together communities, organizations, performers, and cultural leaders from every continent for conference, cultural exchange, and the 42nd International Cultures—Immigrants Parade.</p>
+          <div className="c27">
             {[
               {icon:'🏛',t:'Conference',d:'International dialogue on culture, migration, and economic cooperation.'},
               {icon:'🤝',t:'Cultural Exchange',d:'Direct community-to-community connections across borders.'},
@@ -160,20 +182,20 @@ export default function HomePage() {
               {icon:'🏢',t:'International Partnerships',d:'Institutional collaboration and community development.'},
               {icon:'👥',t:'Community Participation',d:'Open to all organizations, families, and individuals worldwide.'},
             ].map((c) => (
-              <div key={c.t} className="cc">
+              <div key={c.t} className="c27c">
                 <div style={{fontSize:'1.4rem',marginBottom:'8px'}}>{c.icon}</div>
                 <h3 style={{fontSize:'0.88rem',fontWeight:700,color:'#C9A84C',marginBottom:'4px'}}>{c.t}</h3>
-                <p style={{fontSize:'0.75rem',color:'rgba(255,255,255,.5)',lineHeight:1.5,margin:0}}>{c.d}</p>
+                <p style={{fontSize:'0.75rem',color:'rgba(255,255,255,.55)',lineHeight:1.5,margin:0}}>{c.d}</p>
               </div>
             ))}
           </div>
-          <div style={{marginTop:'28px'}}>
-            <Link href="/international-cultures-celebration" style={btnGold}>Learn More About 2027 →</Link>
+          <div style={{marginTop:'32px'}}>
+            <Link href="/international-cultures-celebration" style={{...btnGold,padding:'16px 36px',fontSize:'1rem'}}>Learn More About Celebration 2027 →</Link>
           </div>
         </div>
       </section>
 
-      {/* 6. GLOBAL COMMUNITY */}
+      {/* ═══ 7. GLOBAL COMMUNITY ═══ */}
       <section style={{position:'relative',padding:'80px 24px',background:'#0A1628',overflow:'hidden'}}>
         <div style={{position:'absolute',inset:0,backgroundImage:"url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&q=80')",backgroundSize:'cover',backgroundPosition:'center',opacity:.15}} />
         <div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,rgba(10,22,40,.9),rgba(13,34,64,.85))'}} />
@@ -189,7 +211,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. TESTIMONIALS */}
+      {/* ═══ 8. TESTIMONIALS ═══ */}
       <section style={{padding:'80px 24px',background:'#0D2240'}}>
         <div style={{maxWidth:'1140px',margin:'0 auto'}}>
           <div style={{textAlign:'center'}}>
@@ -221,7 +243,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. PARTNERS */}
+      {/* ═══ 9. PARTNERS ═══ */}
       <section style={{padding:'80px 24px',background:'#0A1628'}}>
         <div style={{maxWidth:'1140px',margin:'0 auto',textAlign:'center'}}>
           <div style={label}>Affiliations &amp; Institutional Partnerships</div>
@@ -244,7 +266,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. FINAL CTA */}
+      {/* ═══ 10. FINAL CTA ═══ */}
       <section style={{padding:'80px 24px',background:'linear-gradient(135deg,#0A1628,#0D2240,#0A1628)',textAlign:'center'}}>
         <div style={{maxWidth:'700px',margin:'0 auto'}}>
           <h2 style={{...h2s,fontSize:'2rem',color:'#fff',marginBottom:'14px'}}>Be Part of Something Bigger</h2>
@@ -252,7 +274,7 @@ export default function HomePage() {
           <div style={{display:'flex',gap:'12px',justifyContent:'center',flexWrap:'wrap'}}>
             <Link href="/programs" style={btnGold}>Explore Programs</Link>
             <Link href="/international-cultures-celebration" style={btnOutline}>International Cultures Celebration 2027</Link>
-            <Link href="/register" style={{...btnOutline,borderColor:'rgba(201,168,76,.4)',color:'#C9A84C'}}>Join Immigrants Alliance</Link>
+            <Link href="/join-seed" style={{...btnOutline,borderColor:'rgba(201,168,76,.4)',color:'#C9A84C'}}>Economic Empowerment</Link>
           </div>
         </div>
       </section>
